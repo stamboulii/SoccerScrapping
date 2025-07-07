@@ -1,0 +1,16 @@
+2025-07-03 12:47:24 | INFO     | database.sqlite_connection:init_database:187 - Initializing SQLite database...
+2025-07-03 12:47:24 | INFO     | database.sqlite_connection:create_tables:139 - Database tables created successfully
+2025-07-03 12:47:24 | INFO     | database.sqlite_connection:init_database:189 - Database initialization completed
+2025-07-03 12:47:24 | INFO     | database.sqlite_connection:generate_sample_data:193 - Generating sample data...
+2025-07-03 12:47:25 | INFO     | database.sqlite_connection:insert_dataframe:156 - Inserted 7 rows into countries
+2025-07-03 12:47:25 | INFO     | database.sqlite_connection:insert_dataframe:156 - Inserted 5 rows into competitions
+2025-07-03 12:47:25 | INFO     | database.sqlite_connection:insert_dataframe:156 - Inserted 5 rows into clubs
+2025-07-03 12:47:25 | INFO     | database.sqlite_connection:generate_sample_data:233 - Sample data generated successfully
+2025-07-07 08:32:42 | INFO     | database.sqlite_connection:init_database:187 - Initializing SQLite database...
+2025-07-07 08:32:42 | INFO     | database.sqlite_connection:create_tables:139 - Database tables created successfully
+2025-07-07 08:32:42 | INFO     | database.sqlite_connection:init_database:189 - Database initialization completed
+2025-07-07 08:50:08 | INFO     | database.sqlite_connection:generate_sample_data:193 - Generating sample data...
+2025-07-07 08:50:08 | INFO     | database.sqlite_connection:insert_dataframe:156 - Inserted 7 rows into countries
+2025-07-07 08:50:08 | INFO     | database.sqlite_connection:insert_dataframe:156 - Inserted 5 rows into competitions
+2025-07-07 08:50:08 | INFO     | database.sqlite_connection:insert_dataframe:156 - Inserted 5 rows into clubs
+2025-07-07 08:50:08 | INFO     | database.sqlite_connection:generate_sample_data:233 - Sample data generated successfully
