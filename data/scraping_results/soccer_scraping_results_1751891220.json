@@ -1,0 +1,90 @@
+{
+  "bbc_sport": {
+    "site": "BBC Sport",
+    "title": "Football - latest news today, results & video highlights - BBC Sport",
+    "articles": [],
+    "matches": [],
+    "headlines": [
+      "Football video",
+      "Scores & Fixtures",
+      "Scores & Fixtures",
+      "More Euro 2025 news",
+      "More top stories"
+    ],
+    "scraping_info": {
+      "response_time": 0.28212523460388184,
+      "status_code": 200,
+      "timestamp": 1751891219.4804327
+    }
+  },
+  "sky_sports": {
+    "site": "Sky Sports",
+    "title": "Football Games, Results, Scores, Transfers, News | Sky Sports",
+    "articles": [],
+    "matches": [],
+    "news": [
+      "Transfer Centre LIVE! Latest on Mbeumo, Madueke, Kudus and more",
+      "Arsenal in advanced talks to sign Gyokeres",
+      "A complete No 6? Inside Zubimendi's rise and why Arsenal wanted him",
+      "What will Arsenal have to pay to get Gyokeres? | 'This is where it gets confusing'",
+      "Newcastle latest: Club confirm striker will depart this summer",
+      "West Ham: Kudus' future and no incomings - should the Hammers be concerned?",
+      "Kudus wants Spurs move as talks continue with West Ham",
+      "Man Utd latest: Squad back for pre-season as five players absent finding moves",
+      "Liverpool latest: Book of condolence for Jota to remain open",
+      "Tottenham latest: Spurs' preparations for new season begin"
+    ],
+    "scraping_info": {
+      "response_time": 0.30847883224487305,
+      "status_code": 200,
+      "timestamp": 1751891219.5858116
+    }
+  },
+  "espn": {
+    "site": "ESPN",
+    "title": "Soccer on ESPN - Scores, Stats and Highlights",
+    "articles": [],
+    "scores": [],
+    "headlines": [],
+    "scraping_info": {
+      "response_time": 0.8451988697052002,
+      "status_code": 200,
+      "timestamp": 1751891219.6458142
+    }
+  },
+  "goal": {
+    "site": "Goal.com",
+    "title": "Football News, Live Scores, Results & Transfers | Goal.com",
+    "articles": [
+      "Man Utd or Arsenal should break the bank for Osimhen",
+      "Zubimendi can play a key role in lifting Arsenal to glory",
+      "Mead & Stanway under threat after awful England loss",
+      "Graham Hansen to the rescue! Norway beat plucky Finland",
+      "Euros Power Rankings: France defeat sends England tumbling",
+      "Late show from Switzerland! Reuteler & Pilgrim keep hopes alive",
+      "Transfers LIVE: Arsenal agree personal terms with Gyokeres",
+      "RIP Diogo Jota: You'll never walk alone",
+      "When Kaka's AC Milan smashed Boca Juniors",
+      "Konate's transfer priority revealed as he enters final year of contract"
+    ],
+    "transfer_news": [],
+    "match_reports": [],
+    "scraping_info": {
+      "response_time": 0.9249305725097656,
+      "status_code": 200,
+      "timestamp": 1751891219.7044473
+    }
+  },
+  "transfermarkt": {
+    "site": "Transfermarkt",
+    "title": "Football transfers, rumours, market values and news | Transfermarkt",
+    "transfers": [],
+    "player_values": [],
+    "market_updates": [],
+    "scraping_info": {
+      "response_time": 0.2401893138885498,
+      "status_code": 200,
+      "timestamp": 1751891219.75244
+    }
+  }
+}

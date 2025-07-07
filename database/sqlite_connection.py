@@ -1,28 +1,32 @@
 import sqlite3
 import pandas as pd
+import json
 from pathlib import Path
 from typing import Optional
 from loguru import logger
+from config import DATABASE_PATH
+from core.exceptions import DatabaseConnectionError
+
+EXPORT_DIR = Path("data/exports")
+EXPORT_DIR.mkdir(parents=True, exist_ok=True)
 
 class SQLiteManager:
-    def __init__(self, db_path: str = "data/soccer.db"):
+    def __init__(self, db_path: str = str(DATABASE_PATH)):
         self.db_path = Path(db_path)
         self.db_path.parent.mkdir(parents=True, exist_ok=True)
         self.connection = None
         self.connect()
-    
+
     def connect(self):
-        """Connect to SQLite database"""
         try:
             self.connection = sqlite3.connect(str(self.db_path))
-            self.connection.row_factory = sqlite3.Row  # Enable column access by name
+            self.connection.row_factory = sqlite3.Row
             logger.info(f"Connected to SQLite database: {self.db_path}")
         except Exception as e:
             logger.error(f"Failed to connect to SQLite database: {e}")
-            raise
-    
+            raise DatabaseConnectionError("Failed to connect to SQLite") from e
+
     def create_tables(self):
-        """Create all tables using SQLite-compatible schema"""
         schema_sql = """
         -- Countries table
         CREATE TABLE IF NOT EXISTS countries (
@@ -33,7 +37,7 @@ class SQLiteManager:
             updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         );
 
-        -- Competitions/Leagues table
+        -- Competitions table
         CREATE TABLE IF NOT EXISTS competitions (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT NOT NULL,
@@ -62,7 +66,7 @@ class SQLiteManager:
             stadium_capacity INTEGER,
             website_url TEXT,
             logo_url TEXT,
-            colors TEXT, -- JSON string for colors
+            colors TEXT,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
             FOREIGN KEY (country_id) REFERENCES countries(id)
@@ -72,6 +76,8 @@ class SQLiteManager:
         CREATE TABLE IF NOT EXISTS players (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT NOT NULL,
+            age INTEGER,
+            club TEXT,
             first_name TEXT,
             last_name TEXT,
             date_of_birth DATE,
@@ -126,12 +132,11 @@ class SQLiteManager:
             FOREIGN KEY (away_club_id) REFERENCES clubs(id)
         );
 
-        -- Create indexes
+        -- Indexes
         CREATE INDEX IF NOT EXISTS idx_players_name ON players(name);
         CREATE INDEX IF NOT EXISTS idx_clubs_name ON clubs(name);
         CREATE INDEX IF NOT EXISTS idx_matches_date ON matches(match_date);
         """
-        
         try:
             cursor = self.connection.cursor()
             cursor.executescript(schema_sql)
@@ -140,29 +145,36 @@ class SQLiteManager:
         except Exception as e:
             logger.error(f"Error creating tables: {e}")
             raise
-    
+
     def execute_query(self, query: str, params: Optional[dict] = None) -> pd.DataFrame:
-        """Execute a query and return results as pandas DataFrame"""
         try:
             return pd.read_sql_query(query, self.connection, params=params)
         except Exception as e:
             logger.error(f"Error executing query: {e}")
             raise
-    
+
     def insert_dataframe(self, df: pd.DataFrame, table_name: str, if_exists: str = 'append'):
-        """Insert pandas DataFrame into database table"""
         try:
             df.to_sql(table_name, self.connection, if_exists=if_exists, index=False)
             logger.info(f"Inserted {len(df)} rows into {table_name}")
         except Exception as e:
             logger.error(f"Error inserting DataFrame into {table_name}: {e}")
             raise
-    
+
+    def bulk_insert_players(self, players_data):
+        try:
+            with self.connection:
+                self.connection.executemany(
+                    "INSERT INTO players (name, age, club) VALUES (?, ?, ?)",
+                    players_data
+                )
+            logger.info(f"✅ Bulk inserted {len(players_data)} players.")
+        except Exception as e:
+            logger.error(f"❌ Bulk insert failed: {e}")
+
     def get_table_stats(self) -> dict:
-        """Get row counts for all tables"""
         tables = ['countries', 'competitions', 'clubs', 'players', 'matches']
         stats = {}
-        
         for table in tables:
             try:
                 cursor = self.connection.cursor()
@@ -170,30 +182,53 @@ class SQLiteManager:
                 stats[table] = cursor.fetchone()[0]
             except:
                 stats[table] = 0
-        
         return stats
-    
+
+    def export_table_to_csv(self, table_name: str):
+        df = self.execute_query(f"SELECT * FROM {table_name}")
+        if not df.empty:
+            path = EXPORT_DIR / f"{table_name}.csv"
+            df.to_csv(path, index=False)
+            logger.info(f"✅ Exported {table_name} to CSV → {path}")
+        else:
+            logger.warning(f"⚠️ No data to export from {table_name}")
+
+    def export_table_to_json(self, table_name: str):
+        df = self.execute_query(f"SELECT * FROM {table_name}")
+        if not df.empty:
+            path = EXPORT_DIR / f"{table_name}.json"
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump(df.to_dict(orient="records"), f, ensure_ascii=False, indent=2)
+            logger.info(f"✅ Exported {table_name} to JSON → {path}")
+        else:
+            logger.warning(f"⚠️ No data to export from {table_name}")
+
+    def export_table_to_excel(self, table_name: str):
+        df = self.execute_query(f"SELECT * FROM {table_name}")
+        if not df.empty:
+            path = EXPORT_DIR / f"{table_name}.xlsx"
+            df.to_excel(path, index=False)
+            logger.info(f"✅ Exported {table_name} to Excel → {path}")
+        else:
+            logger.warning(f"⚠️ No data to export from {table_name}")
+
     def close(self):
-        """Close database connection"""
         if self.connection:
             self.connection.close()
             logger.info("Database connection closed")
 
-# Global database manager instance
+# Global instance
 db_manager = SQLiteManager()
 
 def init_database():
-    """Initialize database - create tables and test connection"""
     logger.info("Initializing SQLite database...")
     db_manager.create_tables()
     logger.info("Database initialization completed")
 
 def generate_sample_data():
-    """Generate sample data for testing"""
     logger.info("Generating sample data...")
-    
-    # Sample countries
-    countries_data = [
+
+    countries_df = pd.DataFrame([
         {'name': 'England', 'code': 'ENG'},
         {'name': 'Spain', 'code': 'ESP'},
         {'name': 'Germany', 'code': 'GER'},
@@ -201,33 +236,25 @@ def generate_sample_data():
         {'name': 'France', 'code': 'FRA'},
         {'name': 'Brazil', 'code': 'BRA'},
         {'name': 'Argentina', 'code': 'ARG'},
-    ]
-    
-    countries_df = pd.DataFrame(countries_data)
+    ])
     db_manager.insert_dataframe(countries_df, 'countries', if_exists='replace')
-    
-    # Sample competitions
-    competitions_data = [
+
+    competitions_df = pd.DataFrame([
         {'name': 'Premier League', 'country_id': 1, 'type': 'league', 'tier': 1, 'season': '2023-24'},
         {'name': 'La Liga', 'country_id': 2, 'type': 'league', 'tier': 1, 'season': '2023-24'},
         {'name': 'Bundesliga', 'country_id': 3, 'type': 'league', 'tier': 1, 'season': '2023-24'},
         {'name': 'Serie A', 'country_id': 4, 'type': 'league', 'tier': 1, 'season': '2023-24'},
         {'name': 'Ligue 1', 'country_id': 5, 'type': 'league', 'tier': 1, 'season': '2023-24'},
-    ]
-    
-    competitions_df = pd.DataFrame(competitions_data)
+    ])
     db_manager.insert_dataframe(competitions_df, 'competitions', if_exists='replace')
-    
-    # Sample clubs
-    clubs_data = [
+
+    clubs_df = pd.DataFrame([
         {'name': 'Manchester City', 'short_name': 'Man City', 'country_id': 1, 'city': 'Manchester'},
         {'name': 'Real Madrid', 'short_name': 'Real Madrid', 'country_id': 2, 'city': 'Madrid'},
         {'name': 'Bayern Munich', 'short_name': 'Bayern', 'country_id': 3, 'city': 'Munich'},
         {'name': 'AC Milan', 'short_name': 'Milan', 'country_id': 4, 'city': 'Milan'},
         {'name': 'Paris Saint-Germain', 'short_name': 'PSG', 'country_id': 5, 'city': 'Paris'},
-    ]
-    
-    clubs_df = pd.DataFrame(clubs_data)
+    ])
     db_manager.insert_dataframe(clubs_df, 'clubs', if_exists='replace')
-    
+
     logger.info("Sample data generated successfully")

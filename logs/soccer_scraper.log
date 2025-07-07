@@ -14,3 +14,40 @@
 2025-07-07 08:50:08 | INFO     | database.sqlite_connection:insert_dataframe:156 - Inserted 5 rows into competitions
 2025-07-07 08:50:08 | INFO     | database.sqlite_connection:insert_dataframe:156 - Inserted 5 rows into clubs
 2025-07-07 08:50:08 | INFO     | database.sqlite_connection:generate_sample_data:233 - Sample data generated successfully
+2025-07-07 12:29:55 | INFO     | database.sqlite_connection:init_database:187 - Initializing SQLite database...
+2025-07-07 12:29:55 | INFO     | database.sqlite_connection:create_tables:139 - Database tables created successfully
+2025-07-07 12:29:55 | INFO     | database.sqlite_connection:init_database:189 - Database initialization completed
+2025-07-07 12:30:05 | INFO     | database.sqlite_connection:generate_sample_data:193 - Generating sample data...
+2025-07-07 12:30:05 | INFO     | database.sqlite_connection:insert_dataframe:156 - Inserted 7 rows into countries
+2025-07-07 12:30:05 | INFO     | database.sqlite_connection:insert_dataframe:156 - Inserted 5 rows into competitions
+2025-07-07 12:30:05 | INFO     | database.sqlite_connection:insert_dataframe:156 - Inserted 5 rows into clubs
+2025-07-07 12:30:05 | INFO     | database.sqlite_connection:generate_sample_data:233 - Sample data generated successfully
+2025-07-07 13:16:03 | INFO     | database.sqlite_connection:init_database:204 - Initializing SQLite database...
+2025-07-07 13:16:03 | INFO     | database.sqlite_connection:create_tables:141 - Database tables created successfully
+2025-07-07 13:16:03 | INFO     | database.sqlite_connection:init_database:206 - Database initialization completed
+2025-07-07 13:16:06 | ERROR    | database.sqlite_connection:bulk_insert_players:176 - ❌ Bulk insert failed: table players has no column named age
+2025-07-07 13:16:13 | INFO     | database.sqlite_connection:generate_sample_data:210 - Generating sample data...
+2025-07-07 13:16:13 | INFO     | database.sqlite_connection:insert_dataframe:158 - Inserted 7 rows into countries
+2025-07-07 13:16:13 | INFO     | database.sqlite_connection:insert_dataframe:158 - Inserted 5 rows into competitions
+2025-07-07 13:16:13 | INFO     | database.sqlite_connection:insert_dataframe:158 - Inserted 5 rows into clubs
+2025-07-07 13:16:13 | INFO     | database.sqlite_connection:generate_sample_data:250 - Sample data generated successfully
+2025-07-07 13:16:36 | ERROR    | database.sqlite_connection:bulk_insert_players:176 - ❌ Bulk insert failed: table players has no column named age
+2025-07-07 13:26:50 | INFO     | database.sqlite_connection:init_database:204 - Initializing SQLite database...
+2025-07-07 13:26:50 | INFO     | database.sqlite_connection:create_tables:141 - Database tables created successfully
+2025-07-07 13:26:50 | INFO     | database.sqlite_connection:init_database:206 - Database initialization completed
+2025-07-07 13:26:52 | INFO     | database.sqlite_connection:bulk_insert_players:174 - ✅ Bulk inserted 1 players.
+2025-07-07 13:34:30 | INFO     | database.sqlite_connection:init_database:205 - Initializing SQLite database...
+2025-07-07 13:34:30 | INFO     | database.sqlite_connection:create_tables:142 - Database tables created successfully
+2025-07-07 13:34:30 | INFO     | database.sqlite_connection:init_database:207 - Database initialization completed
+2025-07-07 13:34:39 | INFO     | database.sqlite_connection:generate_sample_data:211 - Generating sample data...
+2025-07-07 13:34:39 | INFO     | database.sqlite_connection:insert_dataframe:159 - Inserted 7 rows into countries
+2025-07-07 13:34:39 | INFO     | database.sqlite_connection:insert_dataframe:159 - Inserted 5 rows into competitions
+2025-07-07 13:34:39 | INFO     | database.sqlite_connection:insert_dataframe:159 - Inserted 5 rows into clubs
+2025-07-07 13:34:39 | INFO     | database.sqlite_connection:generate_sample_data:251 - Sample data generated successfully
+2025-07-07 13:34:50 | INFO     | database.sqlite_connection:generate_sample_data:211 - Generating sample data...
+2025-07-07 13:34:50 | INFO     | database.sqlite_connection:insert_dataframe:159 - Inserted 7 rows into countries
+2025-07-07 13:34:50 | INFO     | database.sqlite_connection:insert_dataframe:159 - Inserted 5 rows into competitions
+2025-07-07 13:34:50 | INFO     | database.sqlite_connection:insert_dataframe:159 - Inserted 5 rows into clubs
+2025-07-07 13:34:50 | INFO     | database.sqlite_connection:generate_sample_data:251 - Sample data generated successfully
+2025-07-07 13:35:27 | INFO     | database.sqlite_connection:bulk_insert_players:175 - ✅ Bulk inserted 1000 players.
+2025-07-07 13:35:30 | INFO     | database.sqlite_connection:bulk_insert_players:175 - ✅ Bulk inserted 1 players.
