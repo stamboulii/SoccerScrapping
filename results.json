@@ -1,0 +1,311 @@
+{
+    "https://www.bbc.com/sport/football": {
+        "title": "Football - latest news today, results & video highlights - BBC Sport",
+        "articles": []
+    },
+    "https://www.skysports.com/football": {
+        "title": "Football Games, Results, Scores, Transfers, News | Sky Sports",
+        "articles": [
+            {
+                "name": "Crystal Palace demoted to Conference League",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Palace latest: Eagles to appeal Europa League decision",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Transfer Centre LIVE! Latest on Gyokeres, Gibbs-White, Elanga and more",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Forest consider Gibbs-White's Spurs move off for now and consult lawyers over move",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Rashford becomes Barca's top left-wing target - Sky in Germany",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Man Utd latest: 'Barca prepared to go all-in on Rashford deal'",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Arsenal close to Madueke deal after Chelsea give permission to leave CWC",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Why fans doubt Madueke – and why they might be wrong",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Arsenal latest: 'Gyokeres not intending to report for Sporting training'",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Liverpool latest: Reds announce plans for Jota tribute against Preston",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Henderson set to join Brentford",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Rohl set for clear-the-air talks with Sheffield Wednesday players",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Kuhn leaves Celtic to join Italian side Como",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "EvertonBournemouth",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Manchester UnitedWest Ham United",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "West Ham UnitedEverton",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Explained: Why Palace have been demoted to Conference League and what happens next",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Explained: Why Forest are consulting lawyers over Spurs' move for Gibbs-White",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "All the goals from Olivia Smith's season that made Arsenal break transfer record!",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Explained: Why Rashford has emerged as a 'clear target' for Barca",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Smith set to smash women's world transfer record as Arsenal agree £1m fee",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Gibbs-White deal to 'accelerate quickly' as Spurs trigger release clause",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "'His days at Chelsea are numbered' | Arsenal closing in on Noni Madueke signing",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "There's space for Aarons and Tavernier, insists Rangers head coach Martin",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Tottenham latest: 'Club working towards lucrative stadium deal'",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Burnley latest: Bruun Larsen returns on permanent deal",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Newcastle latest: 'Atalanta's Scalvini price tag revealed'",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Forest latest: Brazilian defender Cunha joins from Botafogo",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Aston Villa latest: Deal close to sign Brest goalkeeper Bizot",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Bournemouth latest: 'Cherries in advanced talks for Petrovic'",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Brentford latest: How Henderson and Norgaard compare",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Spurs complete £55m deal for West Ham's Kudus",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Will 'best newcomer' Kudus reignite after stuttering second PL season?",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Arsenal agree world-record fee for Liverpool forward Smith",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Arsenal complete Norgaard signing",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Nottingham Forest make renewed bid for Wissa",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Why Norgaard? What next for Rice? Arsenal's midfield rebuild explained",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Papers: Forest eye McAtee as Gibbs-White replacement",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Club World Cup latest - Wenger hits back at Klopp: This tournament is needed",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Football kits 2025/26: Forest unveil new home shirt 'inspired by kits of past'",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "EFL latest: Bale reveals investment group’s 'brand new offer' to buy Cardiff",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Chelsea latest: 'Caicedo winning fitness battle ahead of CWC final'",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Sunderland latest: Adingra takes summer spending over £100m",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Brighton latest: Seagulls open to selling Ferguson",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Women's Euro 2025: Win over Dutch meaningless unless we deliver vs Wales, says Hemp",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "What England need to reach the Euro 2025 quarter-finals",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "WSL latest: 'Smith's world-record deal shows growth of the game'",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Textor: As Palace lifted FA Cup at Wembley, I was worried about Europa League",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Why Newcastle wanted Elanga and how he will need to adapt",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "West Ham latest: 'Kudus handed in transfer request'",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "England finally get balance right - and the result is special",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Stanway: Lionesses back to being 'proper England' after Netherlands mauling",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "James hits double as England thrash the Netherlands to ignite Euro 2025 campaign",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "AccaFreeze",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Take Time to Think",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Sky Vegas",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Premier League fixtures",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "215 PL games on Sky Sports next season",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Transfer Centre",
+                "age": 25,
+                "club": "Unknown"
+            },
+            {
+                "name": "Confirmed transfers",
+                "age": 25,
+                "club": "Unknown"
+            }
+        ]
+    }
+}

@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from api.models.schemas import Country
+from api.schemas.schemas import Country
 from database.sqlite_connection import db_manager
 
 router = APIRouter()

@@ -1,26 +1,25 @@
-# config.py
-
+# ── config.py ─────────────────────────────────────────────────────────
 from pathlib import Path
+from pydantic_settings import BaseSettings          # ✅ nouveau chemin
+from pydantic import Field                          # Field est toujours dans pydantic v2
 
-# === Paths ===
-BASE_DIR = Path(__file__).parent
-DATA_DIR = BASE_DIR / "data"
-EXPORT_DIR = DATA_DIR / "exports"
-LOG_DIR = BASE_DIR / "logs"
+class Settings(BaseSettings):
+    DATABASE_URL: str = Field(
+        default="postgresql+psycopg2://postgres:548651@localhost:5432/soccer_db",
+        env="DATABASE_URL",
+    )
 
-# === Database ===
-DATABASE_PATH = DATA_DIR / "soccer.db"
+    # logging
+    LOG_LEVEL: str = Field(default="INFO", env="LOG_LEVEL")
+    LOG_TO_CONSOLE: bool = Field(default=True)
+    LOG_TO_FILE: bool = Field(default=False)
+    LOG_FILE_NAME: Path = Path("logs/scraper.log")
 
-# === Scraping ===
-MAX_CONCURRENT_REQUESTS = 5
-SCRAPE_TIMEOUT = 10
-SCRAPE_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+settings = Settings()
 
-# === Logging ===
-LOG_TO_CONSOLE = True
-LOG_TO_FILE = True
-LOG_FILE_NAME = LOG_DIR / "soccer_scraper.log"
-LOG_LEVEL = "INFO"
-
-# === Export Options ===
-CSV_EXPORT_LIMIT = 10000
+# Pour accès direct dans vos modules
+DATABASE_URL   = settings.DATABASE_URL
+LOG_LEVEL      = settings.LOG_LEVEL
+LOG_TO_CONSOLE = settings.LOG_TO_CONSOLE
+LOG_TO_FILE    = settings.LOG_TO_FILE
+LOG_FILE_NAME  = settings.LOG_FILE_NAME

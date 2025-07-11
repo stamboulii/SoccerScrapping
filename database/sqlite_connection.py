@@ -19,7 +19,7 @@ class SQLiteManager:
 
     def connect(self):
         try:
-            self.connection = sqlite3.connect(str(self.db_path))
+            self.connection = sqlite3.connect(str(self.db_path), check_same_thread=False)
             self.connection.row_factory = sqlite3.Row
             logger.info(f"Connected to SQLite database: {self.db_path}")
         except Exception as e:
